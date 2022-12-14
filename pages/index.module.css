@@ -69,6 +69,7 @@
 .warning {
   margin-top: 1rem;
   font-size: 1.6rem;
+  line-height: 1.5;
 }
 
 .loading {
@@ -133,13 +134,18 @@
   line-height: 1;
 }
 
-.footer {
+.blurb {
   font-size: 2rem;
   line-height: 1.5;
   color: white;
-  padding: 4rem;
+  padding-bottom: 4rem;
   background-color: black;
   font-family: Helvetica, sans-serif;
   width: 100%;
   box-sizing: border-box;
+  text-align: left;
+}
+
+.smaller_text {
+  font-size: 1.6rem;
 }
