@@ -5,7 +5,7 @@ import styles from "./index.module.css";
 export default function Home() {
   const [nameInput, setNameInput] = useState("");
   const [poem, setPoem] = useState(null);
-  const [disabled, setDisabled] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const images = [
     "DALL·E 2022-12-14 11.52.34 - A Christmas scene set in Cornwall in the style of Pieter Bruegel.png",
@@ -40,7 +40,7 @@ export default function Home() {
 
   async function onSubmit(event) {
     event.preventDefault();
-    setDisabled(true);
+    setLoading(true);
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -69,20 +69,24 @@ export default function Home() {
     return (
       <div className={styles.layout_right}>
         <h3>Make a christmas limerick </h3>
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Enter your first name"
-            value={nameInput}
-            onChange={(e) => setNameInput(e.target.value)}
-          />
-          <input
-            type="submit"
-            value="Generate a limerick"
-            disabled={disabled}
-          />
-        </form>
+        {loading == false ? (
+          <form onSubmit={onSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your first name"
+              value={nameInput}
+              onChange={(e) => setNameInput(e.target.value)}
+            />
+            <input
+              type="submit"
+              value="Generate a limerick"
+            />
+            <p className={styles.warning}>Sometimes the AI will return a rude text!  Apologies.</p>
+          </form>
+        ) : (
+          <p className={styles.loading}>Generating...</p>
+        )}
       </div>
     );
   };

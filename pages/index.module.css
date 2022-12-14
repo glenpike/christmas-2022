@@ -65,6 +65,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.warning {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+}
+
+.loading {
+  font-size: 2rem;
+}
+
 .main input[type="text"] {
   padding: 12px 16px;
   border: 1px solid #a31010;
