@@ -58,11 +58,14 @@ export default function Home() {
 
   const renderPoem = () => {
     return (
+      <>
+      <h3>Your {typeInput}</h3>
       <div className={styles.poem}>
         {poem.map((line, index) => {
           return <p key={index}>{line}</p>;
         })}
       </div>
+      </>
     );
   };
 
@@ -139,8 +142,8 @@ export default function Home() {
             {poem ? renderPoem() : renderForm()}
             <div className={styles.blurb}>
               <p>
-                *Sometimes it will generate a rude limerick and it's not the
-                best at rhyming everyone's name! Apologies from me.
+                *Sometimes it will generate a rude poem/limerick and it's not the
+                best at rhyming! Apologies from me.
               </p>
               <p>
                 The Christmas card you see is created by{" "}
