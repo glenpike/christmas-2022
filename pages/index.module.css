@@ -29,6 +29,11 @@
   background-color: white;
   color: black;
 }
+.main label {
+  font-size: 2rem;
+  line-height: 2.4;
+  text-align: left;
+}
 .main {
   padding: 4rem 4rem 0;
 }
@@ -42,7 +47,7 @@
 }
 
 .main h1,
-.main h3 {
+.main h2 {
   font-size: 3.2rem;
   line-height: 2;
   font-weight: bold;
@@ -117,6 +122,15 @@
   line-height: 2.4;
   margin: 0 0 2.4rem;
   padding: 0;
+}
+.fieldset legend:not(:focus):not(:active) {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0); 
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  white-space: nowrap; 
 }
 
 .legend {
