@@ -69,7 +69,7 @@ export default function Home() {
   const renderForm = () => {
     return (
       <>
-        <h3>Make a christmas limerick or poem about you </h3>
+        <h3>Make a Christmas limerick* or poem about you </h3>
         {loading == false ? (
           <form onSubmit={onSubmit}>
             <input
@@ -126,7 +126,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1>Merry Christmas from our new robot overlords</h1>
+        <h1>Merry Christmas from Glen and our new robot overlords</h1>
         <div className={styles.layout}>
           <figure className={styles.layout_left}>
             <img className={styles.card} src={`/images/${image}`} alt={alt} />
@@ -135,6 +135,10 @@ export default function Home() {
           <div className={styles.layout_right}>
             {poem ? renderPoem() : renderForm()}
             <div className={styles.blurb}>
+              <p>
+                *Sometimes it will generate a rude limerick and it's not the
+                best at rhyming everyone's name! Apologies from me.
+              </p>
               <p>
                 The Christmas card you see is created by{" "}
                 <a href="https://openai.com/dall-e-2/">DALL-E 2</a> an{" "}
@@ -156,10 +160,6 @@ export default function Home() {
               <p>
                 The poem is done with{" "}
                 <em>'Write a short Christmas poem featuring ...'</em>
-              </p>
-              <p>
-                Sometimes the AI will return a rude poem and it's not the best
-                at limericks/rhyming everyone's name! Apologies.
               </p>
               <p className={styles.smaller_text}>
                 <a href="https://github.com/glenpike/christmas-2022">Made</a> by{" "}
